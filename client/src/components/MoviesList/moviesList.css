@@ -4,9 +4,6 @@
     box-sizing: border-box;
   }
 
-body{
-  background-image: url("https://raw.githubusercontent.com/bunnyohare/SBA-320H/main/images/stars-background.jpg");
-}
 
 #moviesList{
   border: 5px solid rgb(182, 131, 161);
@@ -16,6 +13,7 @@ body{
   width: 100%;
   max-width: 800px;
   margin: 100px auto 0; /* Pushed down by 100 pixels and centered horizontally */
+  background-image: url("https://raw.githubusercontent.com/bunnyohare/SBA-320H/main/images/stars-background.jpg");
 }
 
 #moviesList div{
