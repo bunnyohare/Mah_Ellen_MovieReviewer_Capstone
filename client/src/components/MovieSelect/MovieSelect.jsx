@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import SearchBox from '../SearchBox/SearchBox';
 import MoviesList from '../MoviesList/MoviesList';
+import AddReview from '../../Pages/AddReview/AddReview';
 import axios from 'axios';
 import "./movieSelect.css";
 
 function MovieSelect() {
   const [movies, setMovies] = useState([]);
+  const [selectedMovie, setSelectedMovie] = useState(null); // Track selected movie
   const [initialLoad, setInitialLoad] = useState(true); // Track initial load
 
   const OMDB_URL = import.meta.env.VITE_OMDB_URL_WITH_KEY;
@@ -19,21 +21,29 @@ function MovieSelect() {
     }
   };
 
-
+  const handleMovieSelect = (movie) => {
+    setSelectedMovie(movie); // Update selected movie
+  };
 
   return (
     <div>
       <div className="search-container">
         <SearchBox searchMovies={searchMovies} initialLoad={initialLoad} />
       </div>
-      {movies.length < 1 && initialLoad ? (
-        <div id="Welcome-Box">
-          <h3 id="Welcome">Welcome to the Movie Finder</h3>
-          <p id="No-Favs">Please search for a movie title to add to favorites.</p>
-        </div>
+      {selectedMovie ? (
+        <AddReview selectedMovie={selectedMovie} /> // Render AddReview with selected movie
       ) : (
         <div>
-          <MoviesList movies={movies}  initialLoad={initialLoad}/>
+          {movies.length < 1 && initialLoad ? (
+            <div id="Welcome-Box">
+              <h3 id="Welcome">Welcome to the Movie Finder</h3>
+              <p id="No-Favs">Please search for a movie title to a review</p>
+            </div>
+          ) : (
+            <div>
+              <MoviesList movies={movies} initialLoad={initialLoad} openAddReviewForm={handleMovieSelect} /> // Pass openAddReviewForm function to MoviesList
+            </div>
+          )}
         </div>
       )}
     </div>

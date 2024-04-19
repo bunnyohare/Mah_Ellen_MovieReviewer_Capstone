@@ -9,6 +9,7 @@ import Landing from "./Pages/Landing/Landing";
 import AllReviews from "./Pages/AllReviews/AllReviews";
 import SingleReview from "./Pages/SingleReview/SingleReview";
 import { useLogin } from './LoginContext.jsx';
+import MovieSelect from './components/MovieSelect/MovieSelect.jsx'
 
 function App() {
   const { isLoggedIn, login, logout } = useLogin();
@@ -34,7 +35,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/login" element={<LogIn onLogin={handleLogin} />} />
-            <Route path="/add-review" element={<SingleReview />} />
+            <Route path="/add-review" element={<MovieSelect />} />
             <Route path="/show-reviews" element={<AllReviews />} />
             <Route
               path="/"

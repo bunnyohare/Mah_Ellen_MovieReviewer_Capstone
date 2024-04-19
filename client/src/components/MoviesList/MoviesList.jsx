@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './moviesList.css';
 
-function MoviesList({ movies, addToFavorites, showFavorites, initialLoad, openAddReviewForm }) {
+function MoviesList({ movies, openAddReviewForm }) {
   const handleReviewClick = (movie) => {
     openAddReviewForm(movie);
   };
 
   return (
-    <div id="moviesList" style={{ display: showFavorites ? 'none' : 'block' }}>
+    <div id="moviesList" >
       <h3 id="Movie-List-Heading">Found Movies List</h3>
       {/* Conditionally render the movieList based on showFavorites */}
       {movies.map(movie => (
