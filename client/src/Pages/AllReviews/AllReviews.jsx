@@ -1,14 +1,24 @@
 import React from 'react';
 import './allReviews.css'
 
-const AllReviews = ({ onLogin }) => {
-  return (
-    <div className="landing-page">
-      <img src="path_to_your_image" alt="Welcome Graphic" width="400" height="600" />
-      <h1>Welcome to MY_APP_NAME</h1>
-      <button onClick={onLogin}>Log In</button>
-    </div>
-  );
-};
-
-export default AllReviews;
+const AllReview = () => {
+    // Dummy list of posts
+    const posts = [
+      { id: 1, title: 'Post 1' },
+      { id: 2, title: 'Post 2' },
+      { id: 3, title: 'Post 3' },
+    ];
+  
+    return (
+      <div className="reviews">
+        <h2>Posts</h2>
+        <ul>
+          {posts.map(post => (
+            <li key={post.id}>{post.title}</li>
+          ))}
+        </ul>
+      </div>
+    );
+  };
+  
+  export default AllReview;

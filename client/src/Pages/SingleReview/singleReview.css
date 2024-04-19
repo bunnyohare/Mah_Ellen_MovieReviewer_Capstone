@@ -1,0 +1,12 @@
+.reviews {
+    text-align: center;
+    border: 5px solid pink;
+    padding: 2rem;
+    height: 80vh;
+  }
+  .reviews h2 {
+    margin-bottom: 20px;
+  }
+  .reviews ul {
+    list-style-type: none;
+  }

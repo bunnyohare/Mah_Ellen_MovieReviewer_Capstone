@@ -3,7 +3,7 @@
   }
 .Footer ul {
     font-weight: bolder;
-    font-size: xx-large;
+    font-size: 20px;
     display: flex;
     background-color: rgb(166, 148, 247);
     justify-content: space-evenly;
