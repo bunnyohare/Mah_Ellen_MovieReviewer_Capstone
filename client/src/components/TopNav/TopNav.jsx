@@ -9,14 +9,15 @@ const TopNav = ({ isLoggedIn, onLogin, onLogout }) => {
   };
 
   const handleLogoutClick = () => {
-    onLogout(); // fix this later
+    onLogout();
+    return <Navigate to="/" />;
   };
 
-
   return (
-    <div className="TopNav">
+    <div className={`TopNav ${isLoggedIn ? '' : 'loggedIn'}`}>
+      <ul>
         {isLoggedIn ? (
-          <ul>
+          <>
             <li>
               <Link to="/add-review">Add Review</Link>
             </li>
@@ -26,16 +27,14 @@ const TopNav = ({ isLoggedIn, onLogin, onLogout }) => {
             <li>
               <button onClick={handleLogoutClick}>Log Out</button>
             </li>
-          </ul>
-        
+          </>
         ) : (
-          <ul>
-            <li>
-              <button className="LogIn-Button" onClick={handleLoginClick}>Log In</button>
-            </li>
-          </ul>
+          <li>
+            <button className="LogIn-Button" onClick={handleLoginClick}>Log In</button>
+          </li>
         )}
-      </div>
+      </ul>
+    </div>
   );
 };
 

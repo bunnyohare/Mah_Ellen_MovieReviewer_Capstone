@@ -18,6 +18,7 @@ function App() {
 
   const handleLogout = () => {
     setIsLoggedIn(false);
+    return <Navigate to="/" />;
   };
 
   return (

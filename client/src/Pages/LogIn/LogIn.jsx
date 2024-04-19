@@ -1,15 +1,22 @@
 import React, { useState } from 'react';
 import './logIn.css'
+import { Navigate } from 'react-router-dom';
 
 const LogIn = ({ onLogin }) => {
   const [userId, setUserId] = useState('');
   const [password, setPassword] = useState('');
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Dummy authentication (accept any userId and password)
-    onLogin();
+    // Set loggedIn state to true
+    setLoggedIn(true);
   };
+
+  if (loggedIn) {
+    return <Navigate to="/add-review" />;
+  }
 
   return (
     <div className='LogIn'>
