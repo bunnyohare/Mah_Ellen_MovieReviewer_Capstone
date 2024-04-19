@@ -1,25 +1,33 @@
-.Nav {
-    flex: 1;
-  }
-  
-  .Nav ul {
-    height: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-  }
-  
-  .Nav ul li {
-    list-style: none;
-  }
-  
-  .Nav ul li a {
-    text-decoration: none;
-    cursor: pointer;
-    font-size: 20px;
-  }
-  
-  .Nav ul li a:hover {
-    color: #3498db;
-  }
-  
+/* TopNav.css */
+
+.TopNav {
+  flex: 2;
+}
+
+.TopNav ul {
+  height: 100%;
+  display: flex;
+  background-color: rgb(166, 148, 247);
+}
+
+.TopNav ul li {
+  list-style: none;
+}
+
+.TopNav ul li a {
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.TopNav ul li a:hover {
+  color: #3498db;
+}
+
+/* Move Log In button to the left */
+.LogIn-Button {
+  height: 40px;
+  display: flex;
+  align-items: center; /* Center vertically */
+  margin-right: auto; /* Push the button to the left */
+}

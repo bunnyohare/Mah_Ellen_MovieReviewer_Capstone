@@ -1,0 +1,27 @@
+.Footer {
+    flex: 1;
+  }
+.Footer ul {
+    font-weight: bolder;
+    font-size: xx-large;
+    display: flex;
+    background-color: rgb(166, 148, 247);
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+  }
+  
+.Footer ul li {
+    list-style: none;
+  }
+  
+.Footer ul li a {
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+.Footer ul li a:hover {
+    color: #e4ecf2;
+  }
+  

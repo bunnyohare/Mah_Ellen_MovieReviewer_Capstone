@@ -1,7 +1,6 @@
 import React from 'react';
 import './topNav.css';
 import { Link } from "react-router-dom";
-import { Nav, Button } from 'react-bootstrap';
 
 const TopNav = ({ isLoggedIn, onLogin, onLogout }) => {
   const handleLoginClick = () => {
@@ -16,7 +15,6 @@ const TopNav = ({ isLoggedIn, onLogin, onLogout }) => {
 
   return (
     <div className="TopNav">
-      <div className="NavItem">
         {isLoggedIn ? (
           <ul>
             <li>
@@ -26,19 +24,18 @@ const TopNav = ({ isLoggedIn, onLogin, onLogout }) => {
               <Link to="/show-reviews">Show Reviews</Link>
             </li>
             <li>
-              <Button variant="outline-light" onClick={handleLogoutClick}>Log Out</Button>
+              <button onClick={handleLogoutClick}>Log Out</button>
             </li>
           </ul>
         
         ) : (
           <ul>
             <li>
-              <Button variant="outline-light" onClick={handleLoginClick}>Log In</Button>
+              <button className="LogIn-Button" onClick={handleLoginClick}>Log In</button>
             </li>
           </ul>
         )}
       </div>
-    </div>
   );
 };
 
