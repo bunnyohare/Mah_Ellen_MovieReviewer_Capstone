@@ -6,15 +6,45 @@ function AddReview({ selectedMovie }) {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
 
+  // Default userId
+  const userId = 1; // Change this value to a context for userID for production
+
   // Function to handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Submit form data to backend API
     // Include selected movie data: title, body, IMDBNumber, year, poster
-    console.log('Submitting review:', { title, body, ...selectedMovie });
-    // Reset form fields
-    setTitle('');
-    setBody('');
+    const { imdbID, movieTitle, year, poster } = selectedMovie;
+    const reviewData = {
+      userId,
+      title,
+      body,
+      IMDBNumber: imdbID,
+      movieTitle,
+      year,
+      poster
+    };
+
+    try {
+      const response = await fetch('http://localhost:5005/api/post/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(reviewData)
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit review');
+      }
+
+      console.log('Review submitted successfully!');
+      // Reset form fields
+      setTitle('');
+      setBody('');
+    } catch (error) {
+      console.error('Error submitting review:', error.message);
+    }
   };
 
   return (

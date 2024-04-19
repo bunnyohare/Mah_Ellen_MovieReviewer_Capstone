@@ -35,6 +35,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/login" element={<LogIn onLogin={handleLogin} />} />
+            <Route path="/home" element={<Landing />} />
             <Route path="/add-review" element={<MovieSelect />} />
             <Route path="/show-reviews" element={<AllReviews />} />
             <Route

@@ -18,6 +18,9 @@ const TopNav = () => {
         {isLoggedIn ? (
           <>
             <li>
+              <Link to="/home">Home</Link>
+            </li>
+            <li>
               <Link to="/add-review">Add Review</Link>
             </li>
             <li>

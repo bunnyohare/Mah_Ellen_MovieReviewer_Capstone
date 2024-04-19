@@ -1,24 +1,43 @@
-import React from 'react';
-import './allReviews.css'
+import React, { useEffect, useState } from 'react';
+import './allReviews.css';
+import { useLogin } from '../../LoginContext'; // Update the path accordingly
 
-const AllReview = () => {
-    // Dummy list of posts
-    const posts = [
-      { id: 1, title: 'Post 1' },
-      { id: 2, title: 'Post 2' },
-      { id: 3, title: 'Post 3' },
-    ];
-  
-    return (
-      <div className="reviews">
-        <h2>Posts</h2>
-        <ul>
-          {posts.map(post => (
-            <li key={post.id}>{post.title}</li>
-          ))}
-        </ul>
-      </div>
-    );
-  };
-  
-  export default AllReview;
+const AllReviews = () => {
+  // State to store fetched reviews
+  const [reviews, setReviews] = useState([]);
+
+  // Fetch reviews from the backend API
+  useEffect(() => {
+    const fetchReviews = async () => {
+      try {
+        const response = await fetch('http://localhost:5005/api/post');
+        if (!response.ok) {
+          throw new Error('Failed to fetch reviews');
+        }
+        const data = await response.json();
+        setReviews(data);
+      } catch (error) {
+        console.error('Error fetching reviews:', error.message);
+      }
+    };
+
+    fetchReviews();
+  }, []);
+
+  return (
+    <div className="reviews">
+      <h2>Reviews</h2>
+      <ul>
+        {reviews.map(review => (
+          <li key={review._id}>
+            <h3>{review.movieTitle}</h3>
+            <img src={review.poster} alt={review.movieTitle} />
+            <p>{review.body}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default AllReviews;

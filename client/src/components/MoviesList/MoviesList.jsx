@@ -3,11 +3,13 @@ import './moviesList.css';
 
 function MoviesList({ movies, openAddReviewForm }) {
   const handleReviewClick = (movie) => {
-    openAddReviewForm(movie);
+    // Pass movie information to the Add Review form
+    const { imdbID, Title, Year, Poster } = movie;
+    openAddReviewForm({ imdbID, movieTitle: Title, year: Year, poster: Poster });
   };
 
   return (
-    <div id="moviesList" >
+    <div id="moviesList">
       <h3 id="Movie-List-Heading">Found Movies List</h3>
       {/* Conditionally render the movieList based on showFavorites */}
       {movies.map(movie => (
