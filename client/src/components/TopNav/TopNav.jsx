@@ -1,20 +1,19 @@
 import React from 'react';
 import './topNav.css';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from 'react-router-dom';
+import { useLogin } from '../../LoginContext'; // Update the path accordingly
 
-const TopNav = ({ isLoggedIn, onLogin, onLogout }) => {
-  const handleLoginClick = () => {
-    // Navigate to the login page
-    window.location.href = '/login'; 
-  };
+const TopNav = () => {
+  const { isLoggedIn, logout } = useLogin();
+  const navigate = useNavigate();
 
   const handleLogoutClick = () => {
-    onLogout();
-    return <Navigate to="/" />;
+    logout();
+    navigate('/');
   };
 
   return (
-    <div className={`TopNav ${isLoggedIn ? '' : 'loggedIn'}`}>
+    <div className="TopNav">
       <ul>
         {isLoggedIn ? (
           <>
@@ -30,7 +29,7 @@ const TopNav = ({ isLoggedIn, onLogin, onLogout }) => {
           </>
         ) : (
           <li>
-            <button className="LogIn-Button" onClick={handleLoginClick}>Log In</button>
+            <button className="LogIn-Button" onClick={() => navigate('/login')}>Log In</button>
           </li>
         )}
       </ul>

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import "./App.css";
 import TopNav from "./components/TopNav/TopNav";
 import Footer from "./components/Footer/Footer";
@@ -8,16 +8,18 @@ import ReviewsHome from "./Pages/ReviewsHome/ReviewsHome";
 import Landing from "./Pages/Landing/Landing";
 import AllReviews from "./Pages/AllReviews/AllReviews";
 import SingleReview from "./Pages/SingleReview/SingleReview";
+import { useLogin } from './LoginContext.jsx';
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { isLoggedIn, login, logout } = useLogin();
 
   const handleLogin = () => {
-    setIsLoggedIn(true);
+    login();
+    return <Navigate to="/show-reviews" />;
   };
 
   const handleLogout = () => {
-    setIsLoggedIn(false);
+    logout();
     return <Navigate to="/" />;
   };
 

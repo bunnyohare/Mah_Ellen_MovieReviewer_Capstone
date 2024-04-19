@@ -1,20 +1,14 @@
 import React from 'react';
 import './singleReview.css'
+import MoviesList from '../../components/MoviesList/MoviesList';
+import AddReview from '../AddReview/AddReview';
+import SearchBox from '../../components/SearchBox/SearchBox';
+import MovieSelect from '../../components/MovieSelect/MovieSelect';
 
 const SingleReview = () => {
-  // Dummy list of posts
-  const post = [
-    { id: 1, title: 'Post 1' },
-  ];
-
   return (
-    <div className="reviews">
-      <h2>Posts</h2>
-      <ul>
-        {post.map(post => (
-          <li key={post.id}>{post.title}</li>
-        ))}
-      </ul>
+    <div className="review">
+     <MovieSelect></MovieSelect>
     </div>
   );
 };

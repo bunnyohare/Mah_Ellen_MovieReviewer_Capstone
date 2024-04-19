@@ -1,20 +1,25 @@
 import React, { useState } from 'react';
 import './logIn.css'
 import { Navigate } from 'react-router-dom';
+import { useLogin } from '../../LoginContext'; // Update the path accordingly
 
-const LogIn = ({ onLogin }) => {
+const LogIn = () => {
+  const { login } = useLogin(); // Get the login function from the context
   const [userId, setUserId] = useState('');
   const [password, setPassword] = useState('');
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // New state to track login status
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Dummy authentication (accept any userId and password)
-    // Set loggedIn state to true
-    setLoggedIn(true);
+    // Set isLoggedIn state to true
+    setIsLoggedIn(true);
+    // Call the login function from the context
+    login();
   };
 
-  if (loggedIn) {
+  // Redirect the user to the add-review page if logged in
+  if (isLoggedIn) {
     return <Navigate to="/add-review" />;
   }
 

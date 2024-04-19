@@ -1,16 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './moviesList.css';
 
-function MoviesList({ movies, addToFavorites, showFavorites, initialLoad }) {
-  if ( movies.length <1 && !showFavorites ){
-    return (
-      <div id="moviesList">
-        <h3 id="Movie-List-Heading">Welcome to the Movie Finder</h3>
-        <p id="Welcome">Please search for a movie title to add to favorites.</p>
-      </div>
-    );
-
-  }
+function MoviesList({ movies, addToFavorites, showFavorites, initialLoad, openAddReviewForm }) {
+  const handleReviewClick = (movie) => {
+    openAddReviewForm(movie);
+  };
 
   return (
     <div id="moviesList" style={{ display: showFavorites ? 'none' : 'block' }}>
@@ -22,7 +16,7 @@ function MoviesList({ movies, addToFavorites, showFavorites, initialLoad }) {
           <p>Year: {movie.Year}</p>
           <p>IMDb ID: {movie.imdbID}</p>
           <img src={movie.Poster} onError={(e) => { e.target.onerror = null; e.target.src = "https://raw.githubusercontent.com/bunnyohare/SBA-320H/main/images/placeholder-omdb.jpg"; }} alt={movie.Title} />
-          <button onClick={() => {addToFavorites(movie.imdbID);  setInitialLoad(false)}}>Add to Favorites</button>
+          <button onClick={() => handleReviewClick(movie)}>Write A Review</button>
         </div>
       ))}
     </div>

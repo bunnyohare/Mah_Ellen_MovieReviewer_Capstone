@@ -24,6 +24,9 @@ router.post("/", async (req, res) => {
       id: newId,
       title: req.body.title,
       body: req.body.body,
+      IMDBNumber: req.body.IMDBNumber,
+      year: req.body.year,
+      poster: req.body.poster,
     };
     const newPost = new Post(newPostData);
 
