@@ -26,6 +26,7 @@ const LogIn = () => {
   return (
     <div className='LogIn'>
       <div className='Welcome'>
+      <h1 style={{ color: '#333', fontSize: '32px', margin: '20px 0', fontWeight: 'bold' }}>Welcome to MovieReviewer!</h1>
       <h2>Please Login</h2>
       </div>
       <div id="LogIn-Form">

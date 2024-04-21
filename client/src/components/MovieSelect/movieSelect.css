@@ -1,0 +1,17 @@
+/* logIn.css */
+
+#Welcome-Box {
+    display: flex;
+    flex-direction: column; /* Arrange children vertically */
+    align-items: center; /* Center horizontally */
+    padding: 50px; /* Add padding for space around the content */
+    height: 60vh;
+}
+
+h1 {
+    align-self: center;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+  

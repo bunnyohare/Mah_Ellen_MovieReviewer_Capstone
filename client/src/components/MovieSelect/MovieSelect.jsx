@@ -39,12 +39,12 @@ function MovieSelect() {
         <div>
           {movies.length < 1 && initialLoad ? (
             <div id="Welcome-Box">
-              <h3 id="Welcome">Welcome to the Movie Finder</h3>
-              <p id="No-Favs">Please search for a movie title to a review</p>
+                <h1>Welcome to MovieReviewer!</h1>
+                <p>Please search for a movie title to review</p>
             </div>
           ) : (
             <div>
-              <MoviesList movies={movies} initialLoad={initialLoad} openAddReviewForm={handleMovieSelect} /> // Pass openAddReviewForm function to MoviesList
+              <MoviesList movies={movies} initialLoad={initialLoad} openAddReviewForm={handleMovieSelect} />
             </div>
           )}
         </div>
