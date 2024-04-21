@@ -1,6 +1,6 @@
 # Client side of Mah_Ellen_MovieReviewer_Capstone
 
-Vite React Javascript frontend application that allows users to post movie reviews. Supplies OMDB API info on movies to add visual interest and help identify what movie is being reviewed. This application also displays reviews and allows comments for pusblished reviews.
+Vite React Javascript frontend application that allows users to post movie reviews. Supplies OMDB API info on movies to add visual interest and help identify what movie is being reviewed. This application also displays reviews and allows comments for published reviews.
 
 Source of movie data:
 

@@ -27,9 +27,12 @@ function MovieSelect() {
 
   return (
     <div>
-      <div className="search-container">
-        <SearchBox searchMovies={searchMovies} initialLoad={initialLoad} />
-      </div>
+        
+        {!selectedMovie && (
+        <div className="search-container">
+          <SearchBox searchMovies={searchMovies} initialLoad={initialLoad} />
+        </div>
+      )}
       {selectedMovie ? (
         <AddReview selectedMovie={selectedMovie} /> // Render AddReview with selected movie
       ) : (

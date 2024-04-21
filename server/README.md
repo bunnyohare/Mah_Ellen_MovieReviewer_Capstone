@@ -4,9 +4,7 @@
 
 To test/use this API do the following:
 
-- Please create a MongoDB Database called MovieReviewer
-- Load the database with the JSON data stored in the three files that are contained in the data folder. 
-- Call these collections Comments, Posts, and Users.  
+- Please create a MongoDB Database called MovieReviewer.  
 - Run npm install to get the node_modules.
 - Create a .env file which includes the following:
     ```

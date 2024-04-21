@@ -1,0 +1,26 @@
+#add-review{
+    display: flex; /* Use flexbox layout */
+    justify-content: center; /* Center horizontally */
+    align-items: flex-end; /* Align items on the bottom */
+    margin-top: 100px; /* Push down by 100 pixels */
+  }
+
+  #add-review #input {
+    display: inline-block; /* Ensures the input container is displayed as inline-block */
+    margin-right: 10px; /* Add some space between input and button */
+  }
+
+  #postTitle  #body{
+    font-size: 2rem; /* Twice as large font size */
+    height: 400px; /* Increased height for the text box */
+    width: 400px; /* Adjust width as needed */
+  }
+
+  #add-review button {
+    margin-left: 1rem;
+    margin-bottom: 50px;
+  }
+  h1{
+    align-self: flex-start;
+    justify-self: flex-start;
+  }

@@ -12,7 +12,6 @@ function AddReview({ selectedMovie }) {
   // Function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(postTitle + " Is the postTitle");
     // Submit form data to backend API
     // Include selected movie data: title, body, IMDBNumber, year, poster
     const { imdbID, title, year, poster } = selectedMovie;
@@ -40,7 +39,6 @@ function AddReview({ selectedMovie }) {
       }
 
       console.log('Review submitted successfully!');
-      console.log(JSON.stringify(reviewData))
       // Reset form fields
       setPostTitle('');
       setBody('');
@@ -50,16 +48,15 @@ function AddReview({ selectedMovie }) {
   };
 
   return (
-    <div className="add-review">
-      <h3>Write a Review</h3>
+    <div id="add-review">
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="postTitle">Title:</label>
+        <div id="input">
+          <label htmlFor="postTitle">Title: </label>
           <input type="text" id="postTitle" value={postTitle} onChange={(e) => setPostTitle(e.target.value)} />
         </div>
         <div>
-          <label htmlFor="body">Body:</label>
-          <textarea id="body" value={body} onChange={(e) => setBody(e.target.value)} />
+          <label htmlFor="body">Body: </label>
+          <textarea id="body" rows="6" cols="50" value={body} onChange={(e) => setBody(e.target.value)} />
         </div>
         <button type="submit">Submit Review</button>
       </form>
