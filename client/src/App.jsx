@@ -1,15 +1,20 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 import "./App.css";
 import TopNav from "./components/TopNav/TopNav";
 import Footer from "./components/Footer/Footer";
-import LogIn from "./Pages/LogIn/LogIn";
-import ReviewsHome from "./Pages/ReviewsHome/ReviewsHome";
-import Landing from "./Pages/Landing/Landing";
-import AllReviews from "./Pages/AllReviews/AllReviews";
-//import SingleReview from "./Pages/SingleReview/SingleReview";
-import { useLogin } from './LoginContext.jsx';
-import MovieSelect from './components/MovieSelect/MovieSelect.jsx'
+import LogIn from "./pages/LogIn/LogIn.jsx";
+import ReviewsHome from "./pages/ReviewsHome/ReviewsHome.jsx";
+import Landing from "./pages/Landing/Landing.jsx";
+import AllReviews from "./pages/AllReviews/AllReviews.jsx";
+import EditReview from "./pages/EditReview/EditReview.jsx";
+import { useLogin } from "./LoginContext.jsx";
+import MovieSelect from "./components/MovieSelect/MovieSelect.jsx";
 
 function App() {
   const { isLoggedIn, login, logout } = useLogin();
@@ -38,6 +43,7 @@ function App() {
             <Route path="/home" element={<Landing />} />
             <Route path="/add-review" element={<MovieSelect />} />
             <Route path="/show-reviews" element={<AllReviews />} />
+            <Route path="/edit-review/:id" element={<EditReview />} />
             <Route
               path="/"
               element={
