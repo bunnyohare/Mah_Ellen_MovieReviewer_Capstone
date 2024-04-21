@@ -7,7 +7,7 @@ import LogIn from "./Pages/LogIn/LogIn";
 import ReviewsHome from "./Pages/ReviewsHome/ReviewsHome";
 import Landing from "./Pages/Landing/Landing";
 import AllReviews from "./Pages/AllReviews/AllReviews";
-import SingleReview from "./Pages/SingleReview/SingleReview";
+//import SingleReview from "./Pages/SingleReview/SingleReview";
 import { useLogin } from './LoginContext.jsx';
 import MovieSelect from './components/MovieSelect/MovieSelect.jsx'
 

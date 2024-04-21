@@ -8,13 +8,13 @@ function AddReview({ selectedMovie }) {
 
   // Default userId
   const userId = 1; // Change this value to a context for userID for production
-
+  const { imdbID, title, year, poster } = selectedMovie;
   // Function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     // Submit form data to backend API
     // Include selected movie data: title, body, IMDBNumber, year, poster
-    const { imdbID, title, year, poster } = selectedMovie;
+    // const { imdbID, title, year, poster } = selectedMovie;
     const reviewData = {
       userId,
       title,
@@ -48,6 +48,13 @@ function AddReview({ selectedMovie }) {
   };
 
   return (
+    <div className="review-row">
+    <div id="movie">
+      <h3 id="Movie-List-Heading">Movie Being Reviewed</h3>
+          <h3>{title}</h3>
+          <p>Year: {year}</p>
+          <img src={poster} onError={(e) => { e.target.onerror = null; e.target.src = "https://raw.githubusercontent.com/bunnyohare/SBA-320H/main/images/placeholder-omdb.jpg"; }} alt={title} />
+    </div>
     <div id="add-review">
       <form onSubmit={handleSubmit}>
         <div id="input">
@@ -56,10 +63,11 @@ function AddReview({ selectedMovie }) {
         </div>
         <div>
           <label htmlFor="body">Body: </label>
-          <textarea id="body" rows="6" cols="50" value={body} onChange={(e) => setBody(e.target.value)} />
+          <textarea id="body" rows="16" cols="50" value={body} onChange={(e) => setBody(e.target.value)} />
         </div>
         <button type="submit">Submit Review</button>
       </form>
+    </div>
     </div>
   );
 }

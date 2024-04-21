@@ -1,5 +1,7 @@
 .Footer {
     flex: 1;
+    align-self: flex-end;
+    justify-self: flex-end;
   }
 .Footer ul {
     font-weight: bolder;
