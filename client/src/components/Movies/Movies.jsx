@@ -8,13 +8,13 @@ import "./movies.css";
 function Movies() {
   const [movies, setMovies] = useState([]);
   const [favorites, setFavorites] = useState([]);
-  const [showFavorites, setShowFavorites] = useState(false);
+
   const [initialLoad, setInitialLoad] = useState(true); // Track initial load
 
   const OMDB_URL = import.meta.env.VITE_OMDB_URL_WITH_KEY;
 
   const searchMovies = async (title) => {
-    setShowFavorites(false); // Hide FavoritesGallery when searching for movies
+  
     try {
       const response = await axios.get(`${OMDB_URL}&s=${title}&type=movie`);
       setMovies(response.data.Search || []);
@@ -23,28 +23,9 @@ function Movies() {
     }
   };
 
-  useEffect(() => {
-    const storedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    setFavorites(storedFavorites);
-    // Update initialLoad based on whether there are favorites on component mount
-    setInitialLoad(storedFavorites.length === 0);
-  }, []);
 
-  const addToFavorites = (imdbID) => {
-    try {
-      let updatedFavorites = [...favorites, imdbID];
-      setFavorites(updatedFavorites);
-      localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
-      alert('Movie added to favorites!');
-      setInitialLoad(false);
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  };
 
-  const toggleFavorites = async () => {
-    setShowFavorites(!showFavorites);
-  };
+
 
   return (
     <div>
@@ -59,7 +40,6 @@ function Movies() {
       ) : (
         <div>
           <MoviesList movies={movies} addToFavorites={addToFavorites} showFavorites={showFavorites} initialLoad={initialLoad}/>
-          <FavoritesGallery favorites={favorites} OMDB_URL={OMDB_URL} showFavorites={showFavorites} />
         </div>
       )}
     </div>

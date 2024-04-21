@@ -3,15 +3,15 @@ const mongoose = require('mongoose');
 const postsSchema = new mongoose.Schema({
   userId: { type: Number, index: true },
   id: Number,
-  title: { type: String, index: true },
+  title: String,
   IMDBNumber: { type: String, index: true },
-  movieTitle: String,
+  postTitle: String,
   year: Number,
   poster: String,
   body: String
 });
 
-postsSchema.index({ userId: 1, title: 1 });
+postsSchema.index({ userId: 1});
 
 module.exports = mongoose.model('Post', postsSchema, 'Posts');
 

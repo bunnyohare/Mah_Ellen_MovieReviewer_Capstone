@@ -5,7 +5,7 @@ function MoviesList({ movies, openAddReviewForm }) {
   const handleReviewClick = (movie) => {
     // Pass movie information to the Add Review form
     const { imdbID, Title, Year, Poster } = movie;
-    openAddReviewForm({ imdbID, movieTitle: Title, year: Year, poster: Poster });
+    openAddReviewForm({ imdbID, year: Year, poster: Poster, title: Title });
   };
 
   return (

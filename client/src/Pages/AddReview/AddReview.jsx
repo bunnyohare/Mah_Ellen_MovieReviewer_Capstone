@@ -3,7 +3,7 @@ import './addReview.css';
 
 function AddReview({ selectedMovie }) {
   // State for form fields
-  const [title, setTitle] = useState('');
+  const [postTitle, setPostTitle] = useState('');
   const [body, setBody] = useState('');
 
   // Default userId
@@ -12,15 +12,16 @@ function AddReview({ selectedMovie }) {
   // Function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(postTitle + " Is the postTitle");
     // Submit form data to backend API
     // Include selected movie data: title, body, IMDBNumber, year, poster
-    const { imdbID, movieTitle, year, poster } = selectedMovie;
+    const { imdbID, title, year, poster } = selectedMovie;
     const reviewData = {
       userId,
       title,
       body,
       IMDBNumber: imdbID,
-      movieTitle,
+      postTitle,
       year,
       poster
     };
@@ -39,8 +40,9 @@ function AddReview({ selectedMovie }) {
       }
 
       console.log('Review submitted successfully!');
+      console.log(JSON.stringify(reviewData))
       // Reset form fields
-      setTitle('');
+      setPostTitle('');
       setBody('');
     } catch (error) {
       console.error('Error submitting review:', error.message);
@@ -52,8 +54,8 @@ function AddReview({ selectedMovie }) {
       <h3>Write a Review</h3>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="title">Title:</label>
-          <input type="text" id="title" value={title} onChange={(e) => setTitle(e.target.value)} />
+          <label htmlFor="postTitle">Title:</label>
+          <input type="text" id="postTitle" value={postTitle} onChange={(e) => setPostTitle(e.target.value)} />
         </div>
         <div>
           <label htmlFor="body">Body:</label>

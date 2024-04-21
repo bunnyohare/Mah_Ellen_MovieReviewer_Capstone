@@ -30,8 +30,9 @@ const AllReviews = () => {
       <ul>
         {reviews.map(review => (
           <li key={review._id}>
-            <h3>{review.movieTitle}</h3>
-            <img src={review.poster} alt={review.movieTitle} />
+            <h1>Review Title: {review.postTitle}</h1>
+            <h3>Movie Title: {review.title}</h3>
+            <img src={review.poster} alt={review.Title} />
             <p>{review.body}</p>
           </li>
         ))}

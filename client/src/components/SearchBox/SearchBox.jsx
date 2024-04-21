@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./searchBox.css";
 
-function SearchBox({ searchMovies, toggleFavorites, initialLoad }) {
+function SearchBox({ searchMovies, initialLoad }) {
   const [searchInput, setSearchInput] = useState("");
 
   const handleSearch = () => {
@@ -14,9 +14,7 @@ function SearchBox({ searchMovies, toggleFavorites, initialLoad }) {
     }
   };
 
-  const handleShowFavorites = () => {
-    toggleFavorites();
-  };
+
 
   return (
     <section id="search-box">
@@ -30,7 +28,6 @@ function SearchBox({ searchMovies, toggleFavorites, initialLoad }) {
         />
 
         <button onClick={handleSearch}>Search</button>
-        <button onClick={handleShowFavorites} disabled={initialLoad}>Show Favorites</button>
       </div>
     </section>
   );
