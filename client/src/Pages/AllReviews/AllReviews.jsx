@@ -11,7 +11,6 @@ const AllReviews = () => {
   const navigate = useNavigate(); // Use useNavigate hook to get the navigate function
 
 
-
   useEffect(() => {
     const fetchReviews = async () => {
       try {
@@ -44,13 +43,18 @@ const AllReviews = () => {
 
   return (
     <div className="reviews">
+        <h1 style={{ color: '#333', fontSize: '32px', margin: '20px 0', fontWeight: 'bold' }}>All Your MovieReviewer Reviews</h1>
       <div className="reviews-grid">
         {reviews.map(review => (
           <div key={review._id} className="review">
-            <h1>Review Title: {review.postTitle}</h1>
-            <h3>Movie Title: {review.title}</h3>
+            <h1>Review: {review.postTitle}</h1>
+            <h3>Movie: <cite>{review.title}</cite></h3>
             <img src={review.poster} alt={review.Title} />
-            <p>{review.body}</p>
+            <div className="review-body">
+              {review.body.split('\n\n').map((item, idx) => (
+                <p key={idx}>{item}</p>
+              ))}
+            </div>
 
             <button onClick={() => handleEditClick(review.id)}>Edit Review</button>
 

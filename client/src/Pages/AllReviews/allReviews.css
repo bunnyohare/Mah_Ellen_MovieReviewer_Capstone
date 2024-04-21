@@ -1,13 +1,29 @@
+.reviews {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  height: 80vh;
+}
 .reviews-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 20px;
     justify-items: center;
   }
-  
-  .reviews-grid .review {
-    border: 1px solid #ccc;
-    padding: 20px;
-    text-align: center;
-  }
-  
+
+.reviews-grid .review {
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+}
+
+.reviews-grid img {
+  height: 40vh;
+  width: auto;
+}
+
+.review-body {
+  padding-top: 1rem;
+}
+.review-body p {
+  font-size: 0.8em;
+}

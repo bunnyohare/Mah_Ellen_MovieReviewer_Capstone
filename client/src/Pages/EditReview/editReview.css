@@ -1,12 +1,64 @@
-.reviews {
-    text-align: center;
-    border: 5px solid pink;
-    padding: 2rem;
-    height: 80vh;
-  }
-  .reviews h2 {
-    margin-bottom: 20px;
-  }
-  .reviews ul {
-    list-style-type: none;
-  }
+.reviews{
+  text-align: left;
+  border: 5px solid pink;
+  padding: 2rem;
+  height: 80vh;
+}
+
+.reviews h2 {
+  margin-bottom: 20px;
+}
+
+.reviews ul {
+  list-style-type: none;
+}
+
+.container {
+  display: flex;
+}
+
+.review-row {
+  display: flex;
+}
+
+#movie {
+  margin-right: 20px; /* Add some spacing between the movie info and the form/review */
+}
+
+.hidden {
+  display: none; /* Hide the form when submitted */
+}
+
+.updated-review {
+  margin-top: 20px; /* Add spacing between the form/review and the updated review */
+}
+
+.review-info {
+  margin-right: 20px; /* Add some spacing between the movie info and the form/review */
+}
+
+.review-form {
+  width: 50%; /* Make the form/review take up half of the container */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-top: auto; /* Align bottom of form/review with bottom of container */
+}
+
+.form {
+  width: 100%; /* Ensure form fills its container */
+}
+
+.container {
+  margin-left: 2%; /* Move the container 2% from the left edge of the screen */
+}
+img{
+  height: 40vh;
+}
+p, h3{
+  text-align: left;
+}
+button{
+  margin-bottom: 20px;
+}
