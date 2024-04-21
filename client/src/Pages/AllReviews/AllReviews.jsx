@@ -26,17 +26,16 @@ const AllReviews = () => {
 
   return (
     <div className="reviews">
-      <h2>Reviews</h2>
-      <ul>
+      <div className="reviews-grid">
         {reviews.map(review => (
-          <li key={review._id}>
+          <div key={review._id} className="review">
             <h1>Review Title: {review.postTitle}</h1>
             <h3>Movie Title: {review.title}</h3>
             <img src={review.poster} alt={review.Title} />
             <p>{review.body}</p>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

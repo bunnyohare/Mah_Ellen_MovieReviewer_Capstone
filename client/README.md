@@ -36,3 +36,7 @@ https://as1.ftcdn.net/v2/jpg/03/01/83/28/1000_F_301832885_XSg1F3ba571JjJ1RCrSnXs
 5. Click on the Show Favorites button to see the items you have added to your favorites.
 
 Live deploy available at: TBD
+
+
+Photo by <a href="https://unsplash.com/@somethingmagical?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">something magical</a> on <a href="https://unsplash.com/photos/empty-chairs-inside-a-lighted-hall-SdjA-_Xzuxg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+  
