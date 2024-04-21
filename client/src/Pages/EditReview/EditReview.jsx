@@ -3,9 +3,9 @@ import './editReview.css';
 import axios from 'axios'; // Import Axios
 import { useParams } from 'react-router-dom';
 
-
 function EditReview() {
   const { id } = useParams();
+
   // State for form fields
   const [movieDetails, setMovieDetails] = useState(null);
   const [postTitle, setPostTitle] = useState('');
@@ -17,6 +17,9 @@ function EditReview() {
       try {
         const response = await axios.get(`http://localhost:5005/api/post/${id}`);
         setMovieDetails(response.data);
+        // Pre-fill postTitle and body with existing values
+        setPostTitle(response.data.postTitle);
+        setBody(response.data.body);
       } catch (error) {
         console.error('Error fetching movie details:', error.message);
       }
@@ -40,9 +43,9 @@ function EditReview() {
     };
 
     try {
-      const response = await axios.put(`http://localhost:5005/api/post/${reviewData.IMDBNumber}`, reviewData);
+      const response = await axios.put(`http://localhost:5005/api/post/${id}`, reviewData);
 
-      if (!response.ok) {
+      if (response.status !== 200) {
         throw new Error('Failed to update review');
       }
 
