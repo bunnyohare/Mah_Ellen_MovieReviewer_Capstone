@@ -14,6 +14,7 @@ import AllReviews from "./pages/AllReviews/AllReviews.jsx";
 import EditReview from "./pages/EditReview/EditReview.jsx";
 import { useLogin } from "./LoginContext.jsx";
 import MovieSelect from "./components/MovieSelect/MovieSelect.jsx";
+import Terms from "./pages/Terms/Terms.jsx"
 
 function App() {
   const { isLoggedIn, login, logout } = useLogin();
@@ -43,6 +44,7 @@ function App() {
             <Route path="/add-review" element={<MovieSelect />} />
             <Route path="/show-reviews" element={<AllReviews />} />
             <Route path="/edit-review/:id" element={<EditReview />} />
+            <Route path="/terms" element={<Terms />} />
             <Route
               path="/"
               element={

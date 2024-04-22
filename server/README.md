@@ -3,8 +3,7 @@
 ## Setup
 
 To test/use this API do the following:
-
-- Please create a MongoDB Database called MovieReviewer.  
+ 
 - Run npm install to get the node_modules.
 - Create a .env file which includes the following:
     ```
@@ -20,16 +19,11 @@ To test/use this API do the following:
 
 ## Notes
 
-I've included a set of tests from Postman that should facilitate easy testing of the CRUD functionality of this API. These tests are in the `RTT03-SBA319-MongoDB.postman_collection.json` file.
-
-I've implemented simple email validation via regex and have a test to see if a User id exists before they are allowed to create a Post.
+I've included a set of tests from Postman that should facilitate easy testing of the CRUD functionality of this API. These tests are in the `RTT03-CP-325.1.postman_collection.json` file.
 
 ## Rendered View
 
 The rendered view is available at: http://localhost:5005/
 
-I have created and rendered a view using a view template and template engine. This allows users to easily view the id and username of all users in the DB, the id and title of all posts in the db and the id and name of all the comments in the db in one page. It's not super pretty, but could later be modified and re-used to create a drop-down for each type.
+I have created and rendered a view using a view template and template engine. This allows users to easily view the id and username of all users in the DB and the id and title of all posts in the db in one page. It's not super pretty, but can show the content quickly to a tester before the frontend is installed.
 
-## Credits:
-
-JSON Data: {JSON} Placeholder, Free fake and reliable API for testing and prototyping. https://jsonplaceholder.typicode.com/
