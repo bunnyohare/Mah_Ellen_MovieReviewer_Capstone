@@ -41,7 +41,7 @@ function Terms() {
       <h2>Links To Other Web Sites</h2>
       <p>
         Our Service may contain links to third-party web sites or services that
-        are not owned or controlled by [company/entity name].
+        are not owned or controlled by MovieReviewerInc.
       </p>
     
       <h2>Termination</h2>

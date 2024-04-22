@@ -168,8 +168,9 @@ function AddReview({ selectedMovie }) {
           />
         </div>
       </div>
-      <div className="review-form">
+      <div className="right-side-review">
         {!submitted ? (
+          <div className="review-form">
           <form onSubmit={handleSubmit}>
             <div id="input">
               <label htmlFor="postTitle">Review Title: </label>
@@ -192,18 +193,20 @@ function AddReview({ selectedMovie }) {
             </div>
             <button type="submit">Submit Review</button>
           </form>
+          </div>
         ) : (
           <div className="submitted-review">
             <h3>Review Submitted Successfully!</h3>
             <p>Title: {postTitle}</p>
             <p>Body: {body}</p>
-            <button onClick={handleEditReview}>
+            <button class="edit-review-btn" onClick={handleEditReview}>
               Edit Review
             </button>
           </div>
         )}
+        </div>
       </div>
-    </div>
+ 
   );
 }
 

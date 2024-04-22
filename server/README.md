@@ -19,7 +19,7 @@ To test/use this API do the following:
 
 ## Notes
 
-I've included a set of tests from Postman that should facilitate easy testing of the CRUD functionality of this API. These tests are in the `RTT03-CP-325.1.postman_collection.json` file.
+I've included a set of tests from Postman that should facilitate easy testing of the CRUD functionality of this API. These tests are in the `RTT03-Capstone.postman_collection.json` file. 
 
 ## Rendered View
 

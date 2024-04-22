@@ -14,7 +14,9 @@ import AllReviews from "./pages/AllReviews/AllReviews.jsx";
 import EditReview from "./pages/EditReview/EditReview.jsx";
 import { useLogin } from "./LoginContext.jsx";
 import MovieSelect from "./components/MovieSelect/MovieSelect.jsx";
-import Terms from "./pages/Terms/Terms.jsx"
+import Terms from "./pages/Terms/Terms.jsx";
+import Privacy from "./pages/Privacy/Privacy.jsx";
+import Contact from "./pages/Contact/Contact.jsx";
 
 function App() {
   const { isLoggedIn, login, logout } = useLogin();
@@ -32,11 +34,14 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <TopNav
-          isLoggedIn={isLoggedIn}
-          onLogin={handleLogin}
-          onLogout={handleLogout}
-        />
+        <div className="Nav">
+          <TopNav
+            isLoggedIn={isLoggedIn}
+            onLogin={handleLogin}
+            onLogout={handleLogout}
+          />
+        </div>
+        <div className="App-container">
         <main>
           <Routes>
             <Route path="/login" element={<LogIn onLogin={handleLogin} />} />
@@ -45,6 +50,8 @@ function App() {
             <Route path="/show-reviews" element={<AllReviews />} />
             <Route path="/edit-review/:id" element={<EditReview />} />
             <Route path="/terms" element={<Terms />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/contact" element={<Contact />} />
             <Route
               path="/"
               element={
@@ -53,7 +60,10 @@ function App() {
             />
           </Routes>
         </main>
+      </div>
+      <div className="Footer">
         <Footer />
+      </div>
       </div>
     </Router>
   );
