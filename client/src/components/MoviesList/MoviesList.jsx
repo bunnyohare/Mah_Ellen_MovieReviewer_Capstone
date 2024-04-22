@@ -5,7 +5,10 @@ function MoviesList({ movies, openAddReviewForm }) {
   const handleReviewClick = (movie) => {
     // Pass movie information to the Add Review form
     const { imdbID, Title, Year, Poster } = movie;
-    openAddReviewForm({ imdbID, year: Year, poster: Poster, title: Title });
+    const placeholderImageUrl = "https://raw.githubusercontent.com/bunnyohare/SBA-320H/main/images/placeholder-omdb.jpg";
+    const posterUrl = Poster === placeholderImageUrl ? null : Poster; // If the poster is the placeholder, set it to null
+
+    openAddReviewForm({ imdbID, year: Year, poster: posterUrl, title: Title });
   };
 
   return (

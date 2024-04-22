@@ -1,39 +1,45 @@
-#add-review {
-    display: flex; /* Use flexbox layout */
-    align-items: flex-end; /* Align items on the bottom */
-    margin-top: 100px; /* Push down by 100 pixels */
-  }
-  
-  #add-review #input {
-    display: inline-block; /* Ensures the input container is displayed as inline-block */
-    margin-right: 10px; /* Add some space between input and button */
-  }
-  
-  #movie {
-    margin: 20px; /* Add some space to the left */
-  }
-  
-  .review-row {
-    display: flex; /* Use flexbox layout */
-    flex-wrap: wrap; /* Wrap elements to a new line when they exceed container width */
-  }
-  
-  #postTitle  #body{
-    font-size: 2rem; /* Twice as large font size */
-    height: 400px; /* Increased height for the text box */
-    width: 400px; /* Adjust width as needed */
-  }
+.container {
+  display: flex;
+  text-align: left;
+  padding: 2rem;
+  height: 80vh;
+}
 
-  #add-review button {
-    margin-left: 1rem;
-    margin-bottom: 50px;
-  }
-  h1{
-    align-self: flex-start;
-    justify-self: flex-start;
-  }
+.review-info {
+  margin-right: 20px; /* Add some spacing between the movie info and the form/review */
+}
 
-#review-row{
-    display: flex;
-    flex-wrap: wrap;
+.review-form {
+  width: 50%; /* Make the form/review take up half of the container */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-top: auto; /* Align bottom of form/review with bottom of container */
+  margin-bottom: 5vh; /* Add 5% margin to the bottom */
+}
+
+.submitted-review {
+  margin-top: 20px; 
+  height: 80vh;
+}
+
+#movie {
+  margin-right: 20px; /* Add some spacing between the movie info and the form/review */
+  margin-bottom: 20px;
+  align-self: flex-end; /* Align the movie info to the bottom */
+}
+
+button {
+  margin-top: auto; /* Align the button to the bottom */
+  margin-bottom: 20px;
+}
+
+img {
+  height: 60vh; /* Set the height of the image to 60% of the viewport height */
+  margin-bottom: 20px;
+}
+
+.submitted-review p {
+  text-align: left; /* Justify the text to the left */
 }

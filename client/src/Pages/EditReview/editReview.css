@@ -1,10 +1,3 @@
-.reviews{
-  text-align: left;
-  border: 5px solid pink;
-  padding: 2rem;
-  height: 80vh;
-}
-
 .reviews h2 {
   margin-bottom: 20px;
 }
@@ -35,6 +28,7 @@
 
 .review-info {
   margin-right: 20px; /* Add some spacing between the movie info and the form/review */
+  margin-bottom: 20px;
 }
 
 .review-form {
