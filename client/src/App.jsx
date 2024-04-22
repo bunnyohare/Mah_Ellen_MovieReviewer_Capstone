@@ -9,7 +9,6 @@ import "./App.css";
 import TopNav from "./components/TopNav/TopNav";
 import Footer from "./components/Footer/Footer";
 import LogIn from "./pages/LogIn/LogIn.jsx";
-import ReviewsHome from "./pages/ReviewsHome/ReviewsHome.jsx";
 import Landing from "./pages/Landing/Landing.jsx";
 import AllReviews from "./pages/AllReviews/AllReviews.jsx";
 import EditReview from "./pages/EditReview/EditReview.jsx";
@@ -47,7 +46,7 @@ function App() {
             <Route
               path="/"
               element={
-                isLoggedIn ? <ReviewsHome /> : <Landing onLogin={handleLogin} />
+                isLoggedIn ? <Landing /> : <Landing onLogin={handleLogin} />
               }
             />
           </Routes>

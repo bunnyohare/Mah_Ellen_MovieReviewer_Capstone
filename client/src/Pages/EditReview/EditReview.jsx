@@ -19,7 +19,7 @@ function EditReview() {
         setMovieDetails(response.data);
 
         // Set initial values for postTitle and body from movieDetails
-        setPostTitle(response.data.title);
+        setPostTitle(response.data.postTitle);
         setBody(response.data.body);
       } catch (error) {
         console.error('Error fetching movie details:', error.message);
@@ -80,7 +80,7 @@ function EditReview() {
           <div id="add-review">
             <form onSubmit={handleSubmit} className="form">
               <div id="input">
-                <label htmlFor="postTitle">Title: </label>
+                <label htmlFor="postTitle">Review Title: </label>
                 <input type="text" id="postTitle" value={postTitle} onChange={(e) => setPostTitle(e.target.value)} />
               </div>
               <div>

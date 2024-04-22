@@ -8,7 +8,8 @@ import "./movieSelect.css";
 function MovieSelect() {
   const [movies, setMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null); // Track selected movie
-  const [initialLoad, setInitialLoad] = useState(true); // Track initial load
+  const [initialLoad, setInitialLoad] = useState(true);
+
 
   const OMDB_URL = import.meta.env.VITE_OMDB_URL_WITH_KEY;
 
@@ -33,7 +34,7 @@ function MovieSelect() {
         </div>
       )}
       {selectedMovie ? (
-        <AddReview selectedMovie={selectedMovie} /> // Render AddReview with selected movie
+        <AddReview selectedMovie={selectedMovie} /> // Pass highestId to AddReview
       ) : (
         <div>
           {movies.length < 1 && initialLoad ? (
