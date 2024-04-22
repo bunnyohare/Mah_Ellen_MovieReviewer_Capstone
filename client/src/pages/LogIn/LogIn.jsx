@@ -20,7 +20,7 @@ const LogIn = () => {
 
   // Redirect the user to the add-review page if logged in
   if (isLoggedIn) {
-    return <Navigate to="/add-review" />;
+    return <Navigate to="/show-reviews" />;
   }
 
   return (
