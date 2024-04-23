@@ -3,7 +3,6 @@
 .LogIn {
     display: flex;
     flex-direction: column; /* Arrange children vertically */
-    background-color: antiquewhite;
     align-items: center; /* Center horizontally */
     padding: 50px; /* Add padding for space around the content */
     height: 90vh;
@@ -27,7 +26,10 @@
   }
   
   label {
-    margin-bottom: 5px; /* Add space below labels */
+    display: inline-block;
+    text-align: right;
+    padding-right: 5px;
+    width: 80px;
   }
   
   input {
