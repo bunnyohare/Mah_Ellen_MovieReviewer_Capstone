@@ -3,6 +3,10 @@ import "./addReview.css";
 import axios from "axios"; // Import Axios
 import { useNavigate } from "react-router-dom";
 
+//const OMDB_URL = import.meta.env.VITE_OMDB_URL_WITH_KEY;
+const MDB_SERVER_ADD = import.meta.env.VITE_MDB_SERVER;
+//const MDB_SERVER_ADD = "http://localhost:5005/"
+
 function AddReview({ selectedMovie }) {
   // State for form fields
   const [postTitle, setPostTitle] = useState("");
@@ -24,7 +28,7 @@ function AddReview({ selectedMovie }) {
       try {
         setLoading(true);
         // Send a GET request to fetch all the movies from your server's API
-        const response = await axios.get("http://localhost:5005/api/post/");
+        const response = await axios.get(`${MDB_SERVER_ADD}api/post/`);
         // Process the response to find the maximum id value
         const movies = response.data;
         const ids = movies.map((movie) => parseInt(movie.id));
@@ -94,8 +98,8 @@ function AddReview({ selectedMovie }) {
 
         // Determine the API endpoint based on isNewSubmission
         const endpoint = isNewSubmission
-          ? "http://localhost:5005/api/post/"
-          : `http://localhost:5005/api/post/${reviewId}`;
+          ? `${MDB_SERVER_ADD}api/post/`
+          : `${MDB_SERVER_ADD}api/post/${reviewId}`;
 
         // Determine the HTTP method based on isNewSubmission
         const method = isNewSubmission ? "POST" : "PUT";
@@ -131,7 +135,7 @@ function AddReview({ selectedMovie }) {
       try {
         setLoading(true);
         const response = await axios.get(
-          `http://localhost:5005/api/post/${reviewId}`
+          `${MDB_SERVER_ADD}api/post/${reviewId}`
         );
         console.log("Review details fetched successfully:", response.data);
         const { postTitle, body } = response.data;

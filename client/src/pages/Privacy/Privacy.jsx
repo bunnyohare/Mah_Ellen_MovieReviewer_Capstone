@@ -2,7 +2,7 @@ import React from "react";
 
 function Privacy() {
   return (
-    <div>
+    <div className="Privacy">
       <h1>Privacy Policy</h1>
       <p>
         This Privacy Policy describes how MovieReviewerInc ("we", "us", or

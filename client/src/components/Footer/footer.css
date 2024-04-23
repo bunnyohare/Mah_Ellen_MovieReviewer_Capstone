@@ -21,4 +21,7 @@
 .Footer ul li a:hover {
     color: #e4ecf2;
   }
-  
+.Footer ul li a.active {
+    color: #e4ecf2;
+    font-weight: bold; /* Optionally, make it bold */
+  }

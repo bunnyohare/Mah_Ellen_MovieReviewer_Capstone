@@ -19,11 +19,11 @@
 .TopNav ul li a {
   text-decoration: none;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .TopNav ul li a:hover {
-  color: #3498db;
+  color: #e4ecf2;
 }
 
 .LogIn-Button {
@@ -36,4 +36,8 @@
 /* Space other items evenly */
 .TopNav ul li:not(:last-child) {
   margin-right: auto;
+}
+.TopNav ul li a.active {
+  color: #e4ecf2;
+  font-weight: bold; /* Optionally, make it bold */
 }

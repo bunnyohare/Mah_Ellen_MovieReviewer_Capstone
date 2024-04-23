@@ -2,7 +2,7 @@ import React from "react";
 
 function Terms() {
   return (
-    <div>
+    <div className="Terms">
       <h1>Terms of Use</h1>
       <p>
         These Terms of Use ("Terms") govern your use of MovieReviewer (the

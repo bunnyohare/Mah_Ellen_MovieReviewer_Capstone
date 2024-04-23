@@ -1,11 +1,12 @@
 import React from "react";
 import "./topNav.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useLogin } from "../../LoginContext"; // Update the path accordingly
 
 const TopNav = () => {
   const { isLoggedIn, logout } = useLogin();
   const navigate = useNavigate();
+  const location = useLocation(); // Add useLocation hook
 
   const handleLogoutClick = () => {
     logout();
@@ -18,13 +19,19 @@ const TopNav = () => {
         {isLoggedIn ? (
           <>
             <li>
-              <Link to="/home">Home</Link>
+              <Link to="/home" className={location.pathname === "/home" ? "active" : ""}>
+                Home
+              </Link>
             </li>
             <li>
-              <Link to="/add-review">Add Review</Link>
+              <Link to="/add-review" className={location.pathname === "/add-review" ? "active" : ""}>
+                Add Review
+              </Link>
             </li>
             <li>
-              <Link to="/show-reviews">Show Reviews</Link>
+              <Link to="/show-reviews" className={location.pathname === "/show-reviews" ? "active" : ""}>
+                Show Reviews
+              </Link>
             </li>
             <li>
               <button onClick={handleLogoutClick}>Log Out</button>

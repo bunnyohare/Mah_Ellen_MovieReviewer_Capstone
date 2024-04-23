@@ -4,7 +4,7 @@
 
 To test/use this API do the following:
  
-- Run npm install to get the node_modules.
+- Run `npm install` to get the node_modules.
 - Create a .env file which includes the following:
     ```
     PORT=5005

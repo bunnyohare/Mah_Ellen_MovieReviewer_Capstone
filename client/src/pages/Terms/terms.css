@@ -1,32 +1,32 @@
 /* Apply styles to the outermost div of the Terms component */
-.ContactUs {
+.Terms {
     padding: 20px; /* Add 20px padding all around the content */
   }
   
   /* Style headings */
-  .ContactUs h1 {
+  .Terms h1 {
     font-size: 24px; /* Increase font size for h1 */
     margin-bottom: 10px; /* Add space below h1 */
   }
   
-  .ContactUs h2 {
+  .Terms h2 {
     font-size: 20px; /* Increase font size for h2 */
     margin-top: 20px; /* Add space above h2 */
     margin-bottom: 10px; /* Add space below h2 */
   }
   
   /* Style paragraphs */
-  .ContactUs p {
+  .Terms p {
     margin-bottom: 15px; /* Add space below paragraphs */
   }
   
   /* Style links */
-  .ContactUs a {
+  .Terms a {
     color: blue; /* Set link color to blue */
     text-decoration: underline; /* Underline links */
   }
   
-  .ContactUs a:hover {
+  .Terms a:hover {
     color: darkblue; /* Change link color on hover */
     text-decoration: none; /* Remove underline on hover */
   }

@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./allReviews.css";
-import { useLogin } from "../../LoginContext"; // Update the path accordingly
+import { useLogin } from "../../LoginContext"; 
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+
+const MDB_SERVER_ALL = import.meta.env.VITE_MDB_SERVER;
+//const MDB_SERVER_ALL = "http://localhost:5005/"
 
 const AllReviews = () => {
   // State to store fetched reviews
@@ -12,7 +15,7 @@ const AllReviews = () => {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await axios.get("http://localhost:5005/api/post");
+        const response = await axios.get(`${MDB_SERVER_ALL}api/post`);
         setReviews(response.data);
       } catch (error) {
         console.error("Error fetching reviews:", error.message);
@@ -28,9 +31,9 @@ const AllReviews = () => {
 
   const handleDeleteClick = async (reviewId) => {
     try {
-      await axios.delete(`http://localhost:5005/api/post/${reviewId}`);
+      await axios.delete(`${MDB_SERVER_ALL}api/post/${reviewId}`);
       // Refetch reviews after deletion
-      const response = await axios.get("http://localhost:5005/api/post");
+      const response = await axios.get(`${MDB_SERVER_ALL}api/post`);
       setReviews(response.data);
     } catch (error) {
       console.error("Error deleting review:", error.message);

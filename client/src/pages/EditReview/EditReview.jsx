@@ -3,6 +3,9 @@ import "./editReview.css";
 import axios from "axios"; // Import Axios
 import { useParams } from "react-router-dom";
 
+const MDB_SERVER = import.meta.env.VITE_MDB_SERVER;
+//const MDB_SERVER = "http://localhost:5005/"
+
 function EditReview() {
   const { id } = useParams();
   // State for form fields
@@ -16,7 +19,7 @@ function EditReview() {
     const fetchMovieDetails = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5005/api/post/${id}`
+          `${MDB_SERVER}api/post/${id}`
         );
         setMovieDetails(response.data);
 
@@ -47,7 +50,7 @@ function EditReview() {
 
     try {
       const response = await axios.put(
-        `http://localhost:5005/api/post/${id}`,
+        `${MDB_SERVER}api/post/${id}`,
         reviewData
       );
 
