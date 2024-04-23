@@ -1,34 +1,36 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
-  
-  h2{
-    font-size: xx-large;
-    color: azure;
-  }
-  
-  #No-Favs{
-    color: rgb(90, 42, 95);
-    display: flex; /* Use flexbox layout */
-    justify-content: center; /* Center horizontally */
-    margin-top: 40px; /* Push down by 100 pixels */
-    margin-bottom: 40px;
-  }
-  #Welcome{
-    color: rgb(90, 42, 95);
-    display: flex; /* Use flexbox layout */
-    justify-content: center; /* Center horizontally */
-    margin-top: 40px; /* Push down by 100 pixels */
-    margin-bottom: 40px;
-  }
-  #Welcome-Box{
-    border: 5px solid rgb(182, 131, 161);
-    padding-left: 2%;
-    background-color: aliceblue;
-    font-size: 2rem;
-    width: 100%;
-    max-width: 800px;
-    margin: 100px auto 0; /* Pushed down by 100 pixels and centered horizontally */
-  }
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h2 {
+  font-size: xx-large;
+  color: azure;
+}
+
+#No-Favs {
+  color: rgb(90, 42, 95);
+  display: flex; /* Use flexbox layout */
+  justify-content: center; /* Center horizontally */
+  margin-top: 40px; /* Push down by 100 pixels */
+  margin-bottom: 40px;
+}
+
+#Welcome {
+  color: rgb(90, 42, 95);
+  display: flex; /* Use flexbox layout */
+  justify-content: center; /* Center horizontally */
+  margin-top: 40px; /* Push down by 100 pixels */
+  margin-bottom: 40px;
+}
+
+#Welcome-Box {
+  border: 5px solid rgb(182, 131, 161);
+  padding-left: 2%;
+  background-color: aliceblue;
+  font-size: 2rem;
+  width: 100%;
+  max-width: 800px;
+  margin: 100px auto 0; /* Pushed down by 100 pixels and centered horizontally */
+}

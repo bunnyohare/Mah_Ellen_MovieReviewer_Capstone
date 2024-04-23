@@ -14,8 +14,6 @@ function SearchBox({ searchMovies, initialLoad }) {
     }
   };
 
-
-
   return (
     <section id="search-box">
       <div id="input">
