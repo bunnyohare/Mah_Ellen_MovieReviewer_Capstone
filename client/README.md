@@ -47,6 +47,17 @@ Vite React Javascript frontend for an application that allows users to post movi
 
 Live deploy available at: TBD
 
+## Notes
+
+1. You may notice that it's possible to add more than one review of a given film. This is a feature, not a bug. Roger Ebert, famed film critic, was well-known for purposely reviewing a film more than once. Having a different opinion on a movie three years later after your original review is legitimate, and does not erase your first review from the universe. A refreshed opinion is not the same as an edit.
+
+2. I've created a placeholder images for instances where OMDb did not return an image at all.
+
+## Known Defects and To-Dos
+
+1. There are currently no user accounts. This is by design and is TBD. This is a fast way for a single user to blog about their movie opinions.
+
+2. Currently there are no comments allowed, but this feature will be added at some point.
 
  ## Credits
 
