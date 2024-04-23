@@ -13,11 +13,24 @@
   max-width: 800px;
   margin: 100px auto 0; /* Pushed down by 100 pixels and centered horizontally */
   background-image: url("https://raw.githubusercontent.com/bunnyohare/SBA-320H/main/images/stars-background.jpg");
+  display: flex; /* Added to make the container a flex container */
+  flex-direction: column; /* Stack children vertically */
+  align-items: flex-start; /* Align children to the start of the cross axis */
 }
 
-#moviesList div {
-  margin-bottom: 30px;
-}
+.movielist-item {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: flex-start; /* Align children to the start of the cross axis */
+  margin-bottom: 20px; /* Add some space between movie items */
+ }
+ 
+ .movie-details {
+  display: flex;
+  align-items: flex-start; /* Align children to the start of the cross axis */
+  justify-content: space-between; /* Space out the children */
+  margin-top: 10px; /* Add some space between the movie details and the title/year/ID */
+ }
 
 #search-box {
   display: flex; /* Use flexbox layout */
@@ -43,10 +56,13 @@
   width: 120px; /* Adjust width as needed */
 }
 
-#favs-button {
-  font-size: 2rem;
-  height: 40px;
-  width: 300px; /* Adjust width as needed */
+#div-img, #div-button {
+  display: inline-flex;
+  padding: 2px;
+}
+
+#write-button {
+  margin-left: 10px;
 }
 
 #Movie-List-Heading {
@@ -56,6 +72,16 @@
   margin-top: 40px; /* Push down by 100 pixels */
   margin-bottom: 40px;
 }
+
+h3 {
+  margin-bottom: 10px;
+}
+
+p {
+  color: rgb(00, 00, 00);
+  padding-left: 2em;
+}
+
 #Welcome {
   display: flex; /* Use flexbox layout */
   justify-content: center; /* Center horizontally */
