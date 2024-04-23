@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./addReview.css";
 import axios from "axios"; // Import Axios
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 function AddReview({ selectedMovie }) {
   // State for form fields
@@ -40,7 +40,6 @@ function AddReview({ selectedMovie }) {
 
     fetchHighestId();
   }, []); // Run only once when the component mounts
-
 
   const navigate = useNavigate(); // History object for navigation
   // Navigate to EditReview page with review data and highestId
@@ -150,7 +149,6 @@ function AddReview({ selectedMovie }) {
     }
   }, [submitted, reviewId]);
 
-
   return (
     <div className="container">
       <div className="review-info">
@@ -171,28 +169,28 @@ function AddReview({ selectedMovie }) {
       <div className="right-side-review">
         {!submitted ? (
           <div className="review-form">
-          <form onSubmit={handleSubmit}>
-            <div id="input">
-              <label htmlFor="postTitle">Review Title: </label>
-              <input
-                type="text"
-                id="postTitle"
-                value={postTitle}
-                onChange={(e) => setPostTitle(e.target.value)}
-              />
-            </div>
-            <div>
-              <label htmlFor="body">Body: </label>
-              <textarea
-                id="body"
-                rows="16"
-                cols="50"
-                value={body}
-                onChange={(e) => setBody(e.target.value)}
-              />
-            </div>
-            <button type="submit">Submit Review</button>
-          </form>
+            <form onSubmit={handleSubmit}>
+              <div id="input">
+                <label htmlFor="postTitle">Review Title: </label>
+                <input
+                  type="text"
+                  id="postTitle"
+                  value={postTitle}
+                  onChange={(e) => setPostTitle(e.target.value)}
+                />
+              </div>
+              <div>
+                <label htmlFor="body">Body: </label>
+                <textarea
+                  id="body"
+                  rows="16"
+                  cols="50"
+                  value={body}
+                  onChange={(e) => setBody(e.target.value)}
+                />
+              </div>
+              <button type="submit">Submit Review</button>
+            </form>
           </div>
         ) : (
           <div className="submitted-review">
@@ -204,9 +202,8 @@ function AddReview({ selectedMovie }) {
             </button>
           </div>
         )}
-        </div>
       </div>
- 
+    </div>
   );
 }
 

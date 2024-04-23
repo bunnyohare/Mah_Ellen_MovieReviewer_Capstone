@@ -1,28 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import './editReview.css';
-import axios from 'axios'; // Import Axios
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import "./editReview.css";
+import axios from "axios"; // Import Axios
+import { useParams } from "react-router-dom";
 
 function EditReview() {
   const { id } = useParams();
   // State for form fields
   const [movieDetails, setMovieDetails] = useState(null);
-  const [postTitle, setPostTitle] = useState('');
-  const [body, setBody] = useState('');
+  const [postTitle, setPostTitle] = useState("");
+  const [body, setBody] = useState("");
   const [submitted, setSubmitted] = useState(false); // State to track form submission
 
   // Function to fetch movie details
   useEffect(() => {
     const fetchMovieDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:5005/api/post/${id}`);
+        const response = await axios.get(
+          `http://localhost:5005/api/post/${id}`
+        );
         setMovieDetails(response.data);
 
         // Set initial values for postTitle and body from movieDetails
         setPostTitle(response.data.postTitle);
         setBody(response.data.body);
       } catch (error) {
-        console.error('Error fetching movie details:', error.message);
+        console.error("Error fetching movie details:", error.message);
       }
     };
 
@@ -40,20 +42,23 @@ function EditReview() {
       IMDBNumber: movieDetails.imdbID,
       postTitle,
       year: movieDetails.year,
-      poster: movieDetails.poster
+      poster: movieDetails.poster,
     };
 
     try {
-      const response = await axios.put(`http://localhost:5005/api/post/${id}`, reviewData);
+      const response = await axios.put(
+        `http://localhost:5005/api/post/${id}`,
+        reviewData
+      );
 
       if (response.status === 200) {
-        console.log('Review updated successfully!');
+        console.log("Review updated successfully!");
         setSubmitted(true); // Update state to indicate form submission
       } else {
-        throw new Error('Failed to update review');
+        throw new Error("Failed to update review");
       }
     } catch (error) {
-      console.error('Error updating review:', error.message);
+      console.error("Error updating review:", error.message);
     }
   };
 
@@ -70,7 +75,11 @@ function EditReview() {
           <p>Year: {movieDetails.year}</p>
           <img
             src={movieDetails.poster}
-            onError={(e) => { e.target.onerror = null; e.target.src = "https://raw.githubusercontent.com/bunnyohare/SBA-320H/main/images/placeholder-omdb.jpg"; }}
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src =
+                "https://raw.githubusercontent.com/bunnyohare/SBA-320H/main/images/placeholder-omdb.jpg";
+            }}
             alt={movieDetails.title}
           />
         </div>
@@ -81,11 +90,22 @@ function EditReview() {
             <form onSubmit={handleSubmit} className="form">
               <div id="input">
                 <label htmlFor="postTitle">Review Title: </label>
-                <input type="text" id="postTitle" value={postTitle} onChange={(e) => setPostTitle(e.target.value)} />
+                <input
+                  type="text"
+                  id="postTitle"
+                  value={postTitle}
+                  onChange={(e) => setPostTitle(e.target.value)}
+                />
               </div>
               <div>
                 <label htmlFor="body">Body: </label>
-                <textarea id="body" rows="16" cols="50" value={body} onChange={(e) => setBody(e.target.value)} />
+                <textarea
+                  id="body"
+                  rows="16"
+                  cols="50"
+                  value={body}
+                  onChange={(e) => setBody(e.target.value)}
+                />
               </div>
               <button type="submit">Submit Review</button>
             </form>

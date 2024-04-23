@@ -3,11 +3,11 @@
   margin-right: 0.5rem;
 }
 .reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 20px;
-    justify-items: center;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+  justify-items: center;
+}
 
 .reviews-grid .review {
   border: 1px solid #ccc;

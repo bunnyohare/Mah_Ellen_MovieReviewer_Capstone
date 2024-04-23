@@ -8,44 +8,44 @@
   width: 100%;
   box-sizing: border-box;
   margin-top: 3rem; /* Ensure the container is 5% down the page */
- }
- 
- .review-info, .review-form {
+}
+
+.review-info,
+.review-form {
   width: 100%;
   box-sizing: border-box;
   padding: 0; /* Remove padding to align with the top of the poster */
- }
- 
- /* Desktop styles */
- @media (min-width: 768px) {
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
   .container {
-     flex-direction: row;
-     justify-content: space-between;
-     width: 80%; /* Adjust the container width to 80% to account for the 20% white space */
-     margin: 0 auto; /* Center the container */
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%; /* Adjust the container width to 80% to account for the 20% white space */
+    margin: 0 auto; /* Center the container */
   }
- 
+
   .review-info {
-     margin-right: 20px;
+    margin-right: 20px;
   }
- 
+
   .review-form {
-     margin-left: 20px;
-     margin-bottom: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
   }
- }
- 
- /* Mobile styles */
- @media (max-width: 767px) {
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
   .container {
-     flex-direction: column;
-     align-items: stretch;
+    flex-direction: column;
+    align-items: stretch;
   }
- 
-  .review-info, .review-form {
-     width: 100%;
-     margin-bottom: 20px;
+
+  .review-info,
+  .review-form {
+    width: 100%;
+    margin-bottom: 20px;
   }
- }
- 
- 
+}

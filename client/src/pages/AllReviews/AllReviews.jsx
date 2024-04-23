@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import './allReviews.css';
-import { useLogin } from '../../LoginContext'; // Update the path accordingly
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import "./allReviews.css";
+import { useLogin } from "../../LoginContext"; // Update the path accordingly
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const AllReviews = () => {
   // State to store fetched reviews
@@ -12,10 +12,10 @@ const AllReviews = () => {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await axios.get('http://localhost:5005/api/post');
+        const response = await axios.get("http://localhost:5005/api/post");
         setReviews(response.data);
       } catch (error) {
-        console.error('Error fetching reviews:', error.message);
+        console.error("Error fetching reviews:", error.message);
       }
     };
 
@@ -30,36 +30,52 @@ const AllReviews = () => {
     try {
       await axios.delete(`http://localhost:5005/api/post/${reviewId}`);
       // Refetch reviews after deletion
-      const response = await axios.get('http://localhost:5005/api/post');
+      const response = await axios.get("http://localhost:5005/api/post");
       setReviews(response.data);
     } catch (error) {
-      console.error('Error deleting review:', error.message);
+      console.error("Error deleting review:", error.message);
     }
   };
 
   return (
     <div className="reviews">
-      <h1 style={{ color: '#333', fontSize: '32px', margin: '20px 0', fontWeight: 'bold' }}>All Your MovieReviewer Reviews</h1>
+      <h1
+        style={{
+          color: "#333",
+          fontSize: "32px",
+          margin: "20px 0",
+          fontWeight: "bold",
+        }}
+      >
+        All Your MovieReviewer Reviews
+      </h1>
       <div className="reviews-grid">
-        {reviews.map(review => (
+        {reviews.map((review) => (
           <div key={review._id} className="review">
             <h2>Review: {review.postTitle}</h2>
-            <h3>Movie: <cite>{review.title}</cite></h3>
+            <h3>
+              Movie: <cite>{review.title}</cite>
+            </h3>
             <img
               src={review.poster}
               onError={(e) => {
                 e.target.onerror = null; // Prevent infinite loop
-                e.target.src = "https://raw.githubusercontent.com/bunnyohare/SBA-320H/main/images/placeholder-omdb.jpg"; // Set the source to the placeholder URL
+                e.target.src =
+                  "https://raw.githubusercontent.com/bunnyohare/SBA-320H/main/images/placeholder-omdb.jpg"; // Set the source to the placeholder URL
               }}
               alt={review.Title}
             />
             <div className="review-body">
-              {review.body.split('\n\n').map((item, idx) => (
+              {review.body.split("\n\n").map((item, idx) => (
                 <p key={idx}>{item}</p>
               ))}
             </div>
-            <button onClick={() => handleEditClick(review.id)}>Edit Review</button>
-            <button onClick={() => handleDeleteClick(review.id)}>Delete Review</button>
+            <button onClick={() => handleEditClick(review.id)}>
+              Edit Review
+            </button>
+            <button onClick={() => handleDeleteClick(review.id)}>
+              Delete Review
+            </button>
           </div>
         ))}
       </div>
