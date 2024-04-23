@@ -27,7 +27,6 @@ const postsRouter = require("./routes/posts");
 app.use("/api/user", usersRouter);
 app.use("/api/post", postsRouter);
 
-
 // Define route handler for the index page
 app.get("/", async (req, res) => {
   try {
@@ -36,7 +35,7 @@ app.get("/", async (req, res) => {
     const posts = await Post.find();
 
     // Render the index page and pass users, posts, and comments data to the view template
-    res.render("index", { users: users, posts: posts});
+    res.render("index", { users: users, posts: posts });
   } catch (error) {
     console.error("Error fetching data:", error);
     res.status(500).json({ error: "Internal Server Error" });

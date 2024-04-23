@@ -20,34 +20,34 @@ router.post("/", async (req, res) => {
     }
 
     const newUserName = req.body.username;
-    let user = await User.findOne({username: newUserName});
+    let user = await User.findOne({ username: newUserName });
     if (user) {
       return res.status(404).json({ error: "User name already exists." });
     }
-    user = await User.findOne({email: newEmail});
+    user = await User.findOne({ email: newEmail });
     if (user) {
       return res.status(404).json({ error: "User email already exists." });
     }
-     // Find the document with the highest ID
-     const highestIdUser = await User.findOne({}, {}, { sort: { 'id': -1 } });
+    // Find the document with the highest ID
+    const highestIdUser = await User.findOne({}, {}, { sort: { id: -1 } });
 
-     // Generate a new ID by incrementing the highest ID by 1
-     const newId = highestIdUser ? highestIdUser.id + 1 : 1;
-     const { name, address, geo, phone, website, company } = req.body;
+    // Generate a new ID by incrementing the highest ID by 1
+    const newId = highestIdUser ? highestIdUser.id + 1 : 1;
+    const { name, address, geo, phone, website, company } = req.body;
 
-     // Create the new post with the generated ID
-      const newUser= new User({
-        id: newId,
-        name,
-        username: newUserName,
-        email: newEmail,
-        address,
-        geo,
-        phone,
-        website,
-        company
-      });
-    
+    // Create the new post with the generated ID
+    const newUser = new User({
+      id: newId,
+      name,
+      username: newUserName,
+      email: newEmail,
+      address,
+      geo,
+      phone,
+      website,
+      company,
+    });
+
     await newUser.save();
     res.json({ message: "User inserted successfully" });
   } catch (error) {

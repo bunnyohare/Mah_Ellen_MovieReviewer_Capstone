@@ -8,12 +8,14 @@ router.post("/", async (req, res) => {
   try {
     // Check if the user exists before allowing them to post
     const newUserId = req.body.userId;
-    const user = await User.findOne({id: newUserId});
+    const user = await User.findOne({ id: newUserId });
     if (!user) {
-      return res.status(404).json({ error: "User not found. Cannot create post." });
+      return res
+        .status(404)
+        .json({ error: "User not found. Cannot create post." });
     }
     // Find the document with the highest ID
-    const highestIdPost = await Post.findOne({}, {}, { sort: { 'id': -1 } });
+    const highestIdPost = await Post.findOne({}, {}, { sort: { id: -1 } });
 
     // Generate a new ID by incrementing the highest ID by 1
     const newId = highestIdPost ? highestIdPost.id + 1 : 1;
@@ -69,7 +71,11 @@ router.get("/:id", async (req, res) => {
 // PUT - Update a post by ID
 router.put("/:id", async (req, res) => {
   try {
-    const updatedPost = await Post.findOneAndUpdate({ id: req.params.id }, req.body, { new: true });
+    const updatedPost = await Post.findOneAndUpdate(
+      { id: req.params.id },
+      req.body,
+      { new: true }
+    );
     if (!updatedPost) {
       return res.status(404).json({ error: "Post not found" });
     }
