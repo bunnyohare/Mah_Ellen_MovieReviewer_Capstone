@@ -42,28 +42,28 @@ function App() {
           />
         </div>
         <div className="App-container">
-        <main>
-          <Routes>
-            <Route path="/login" element={<LogIn onLogin={handleLogin} />} />
-            <Route path="/home" element={<Landing />} />
-            <Route path="/add-review" element={<MovieSelect />} />
-            <Route path="/show-reviews" element={<AllReviews />} />
-            <Route path="/edit-review/:id" element={<EditReview />} />
-            <Route path="/terms" element={<Terms />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route
-              path="/"
-              element={
-                isLoggedIn ? <Landing /> : <Landing onLogin={handleLogin} />
-              }
-            />
-          </Routes>
-        </main>
-      </div>
-      <div className="Footer">
-        <Footer />
-      </div>
+          <main>
+            <Routes>
+              <Route path="/login" element={<LogIn onLogin={handleLogin} />} />
+              <Route path="/home" element={<Landing />} />
+              <Route path="/add-review" element={<MovieSelect />} />
+              <Route path="/show-reviews" element={<AllReviews />} />
+              <Route path="/edit-review/:id" element={<EditReview />} />
+              <Route path="/terms" element={<Terms />} />
+              <Route path="/privacy" element={<Privacy />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route
+                path="/"
+                element={
+                  isLoggedIn ? <Landing /> : <Landing onLogin={handleLogin} />
+                }
+              />
+            </Routes>
+          </main>
+        </div>
+        <div className="Footer">
+          <Footer />
+        </div>
       </div>
     </Router>
   );

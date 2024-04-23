@@ -1,42 +1,41 @@
 /* logIn.css */
 
 .LogIn {
-    display: flex;
-    flex-direction: column; /* Arrange children vertically */
-    align-items: center; /* Center horizontally */
-    padding: 50px; /* Add padding for space around the content */
-    height: 90vh;
-  }
-  
-  .Welcome {
-    margin-bottom: 20px; /* Add space below the Welcome section */
-  }
-  
-  .LogIn-Form {
-    display: block;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column; /* Arrange form elements vertically */
-  }
-  
-  form > div {
-    margin-bottom: 20px; /* Add space between form elements */
-  }
-  
-  label {
-    display: inline-block;
-    text-align: right;
-    padding-right: 5px;
-    width: 80px;
-  }
-  
-  input {
-    padding: 5px; /* Add padding for input fields */
-  }
-  
-  button {
-    padding: 10px; /* Add padding for the submit button */
-  }
-  
+  display: flex;
+  flex-direction: column; /* Arrange children vertically */
+  align-items: center; /* Center horizontally */
+  padding: 50px; /* Add padding for space around the content */
+  height: 90vh;
+}
+
+.Welcome {
+  margin-bottom: 20px; /* Add space below the Welcome section */
+}
+
+.LogIn-Form {
+  display: block;
+}
+
+form {
+  display: flex;
+  flex-direction: column; /* Arrange form elements vertically */
+}
+
+form > div {
+  margin-bottom: 20px; /* Add space between form elements */
+}
+
+label {
+  display: inline-block;
+  text-align: right;
+  padding-right: 5px;
+  width: 80px;
+}
+
+input {
+  padding: 5px; /* Add padding for input fields */
+}
+
+button {
+  padding: 10px; /* Add padding for the submit button */
+}

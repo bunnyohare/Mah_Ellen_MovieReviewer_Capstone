@@ -1,7 +1,7 @@
-import React from 'react';
-import './topNav.css';
-import { Link, useNavigate } from 'react-router-dom';
-import { useLogin } from '../../LoginContext'; // Update the path accordingly
+import React from "react";
+import "./topNav.css";
+import { Link, useNavigate } from "react-router-dom";
+import { useLogin } from "../../LoginContext"; // Update the path accordingly
 
 const TopNav = () => {
   const { isLoggedIn, logout } = useLogin();
@@ -9,7 +9,7 @@ const TopNav = () => {
 
   const handleLogoutClick = () => {
     logout();
-    navigate('/');
+    navigate("/");
   };
 
   return (
@@ -32,7 +32,9 @@ const TopNav = () => {
           </>
         ) : (
           <li>
-            <button className="LogIn-Button" onClick={() => navigate('/login')}>Log In</button>
+            <button className="LogIn-Button" onClick={() => navigate("/login")}>
+              Log In
+            </button>
           </li>
         )}
       </ul>
