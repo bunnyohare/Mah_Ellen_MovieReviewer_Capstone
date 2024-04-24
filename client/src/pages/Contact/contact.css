@@ -1,6 +1,7 @@
 /* Apply styles to the outermost div of the Terms component */
 .ContactUs {
     padding: 20px; /* Add 20px padding all around the content */
+    height: 90vh;
   }
   
   /* Style headings */

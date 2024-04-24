@@ -1,6 +1,7 @@
 .landing-page {
   display: flex;
-  align-items: center; /* Vertically center content */
+  align-items: center;
+  height: 90vh;
   justify-content: space-evenly;
 }
 
