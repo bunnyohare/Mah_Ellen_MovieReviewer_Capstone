@@ -16,6 +16,9 @@
   box-sizing: border-box;
   padding: 0; /* Remove padding to align with the top of the poster */
 }
+#review-year{
+  text-align: center;
+}
 
 /* Desktop styles */
 @media (min-width: 768px) {
@@ -48,7 +51,4 @@
     width: 100%;
     margin-bottom: 20px;
   }
-}
-#review-year{
-  text-align: center;
 }
