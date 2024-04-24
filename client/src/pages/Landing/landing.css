@@ -8,7 +8,6 @@
   width: 60%;
   margin: auto; /* Center the container horizontally */
   padding: 20px;
-  background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -16,14 +15,16 @@
 
 h1 {
   margin: 20px 0; /* Reduce the vertical margin */
-  color: #333;
-  font-size: 32px;
+  color: #666;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 p {
   color: #666;
   margin-bottom: 20px;
   font-size: 24px;
+  font-weight: bold;
 }
 
 #landing-img {

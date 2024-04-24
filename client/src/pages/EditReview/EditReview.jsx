@@ -73,9 +73,9 @@ function EditReview() {
     <div className="container">
       <div className="review-info">
         <div id="movie">
-          <h2 id="Movie-List-Heading">Movie Being Reviewed</h2>
-          <h3>{movieDetails.title}</h3>
-          <p>Year: {movieDetails.year}</p>
+          <h1 id="Movie-List-Heading">Movie Being Reviewed</h1>
+          <h2>{movieDetails.title}</h2>
+          <p id="review-year">Year: {movieDetails.year}</p>
           <img
             src={movieDetails.poster}
             onError={(e) => {

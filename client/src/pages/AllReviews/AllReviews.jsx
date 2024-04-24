@@ -42,16 +42,7 @@ const AllReviews = () => {
 
   return (
     <div className="reviews">
-      <h1
-        style={{
-          color: "#333",
-          fontSize: "32px",
-          margin: "20px 0",
-          fontWeight: "bold",
-        }}
-      >
-        All Your MovieReviewer Reviews
-      </h1>
+      <h1>All Your MovieReviewer Reviews</h1>
       <div className="reviews-grid">
         {reviews.map((review) => (
           <div key={review._id} className="review">

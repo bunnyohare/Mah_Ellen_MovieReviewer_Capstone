@@ -157,9 +157,9 @@ function AddReview({ selectedMovie }) {
     <div className="container">
       <div className="review-info">
         <div id="movie">
-          <h3 id="Movie-List-Heading">Movie Being Reviewed</h3>
-          <h3>{title}</h3>
-          <p>Year: {year}</p>
+          <h1 id="Movie-List-Heading">Movie Being Reviewed</h1>
+          <h2>{title}</h2>
+          <p id="review-year">Year: {year}</p>
           <img
             src={poster}
             onError={(e) => {

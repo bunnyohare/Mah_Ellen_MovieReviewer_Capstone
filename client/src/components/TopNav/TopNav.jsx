@@ -1,8 +1,7 @@
 import React from "react";
 import "./topNav.css";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { useLogin } from "../../LoginContext"; // Update the path accordingly
-
+import { useLogin } from "../../LoginContext"; 
 const TopNav = () => {
   const { isLoggedIn, logout } = useLogin();
   const navigate = useNavigate();

@@ -9,11 +9,20 @@
   display: flex;
   background-color: rgb(166, 148, 247);
   align-items: center;
-  height: 100%;
+  padding-left: 10px; /* Add left padding to the nav container */
+  padding-right: 10px; /* Add right padding to the nav container */
 }
 
 .TopNav ul li {
   list-style: none;
+}
+
+.TopNav ul li:first-child a {
+  margin-left: 10px; /* Add left margin to the first nav item */
+}
+
+.TopNav ul li:last-child a {
+  margin-right: 10px; /* Add right margin to the last nav item */
 }
 
 .TopNav ul li a {
@@ -37,6 +46,7 @@
 .TopNav ul li:not(:last-child) {
   margin-right: auto;
 }
+
 .TopNav ul li a.active {
   color: #e4ecf2;
   font-weight: bold; /* Optionally, make it bold */

@@ -11,7 +11,9 @@ Vite React Javascript frontend for an application that allows users to post movi
 2. Obtain YOUR_API_KEY from OMDB https://www.omdbapi.com/apikey.aspx
 
 3. Create a `.env` file that contains the following:
+
 `VITE_OMDB_URL_WITH_KEY=http://www.omdbapi.com/?apikey=YOUR_API_KEY`
+`VITE_MDB_SERVER=http://WHERE_YOUR_EXPRESS_MONGODB_SERVER_IS`
 
 ## To use the application:
 
@@ -45,7 +47,7 @@ Vite React Javascript frontend for an application that allows users to post movi
 
 1. A user my logout using the Log Out button in the top navigation.
 
-Live deploy available at: TBD
+<a href="https://mah-ellen-moviereviewer-capstone.onrender.com/">Live deploy available onrender.com</a> 
 
 ## Notes
 

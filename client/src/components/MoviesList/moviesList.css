@@ -5,14 +5,11 @@
 }
 
 #moviesList {
-  border: 5px solid rgb(182, 131, 161);
   padding-left: 2%;
-  background-color: aliceblue;
   font-size: 2rem;
   width: 100%;
   max-width: 800px;
-  margin: 100px auto 0; /* Pushed down by 100 pixels and centered horizontally */
-  background-image: url("https://raw.githubusercontent.com/bunnyohare/SBA-320H/main/images/stars-background.jpg");
+  margin: 20px auto 0; /* Pushed down by 20 pixels and centered horizontally */
   display: flex; /* Added to make the container a flex container */
   flex-direction: column; /* Stack children vertically */
   align-items: flex-start; /* Align children to the start of the cross axis */
@@ -36,7 +33,7 @@
   display: flex; /* Use flexbox layout */
   justify-content: center; /* Center horizontally */
   align-items: flex-end; /* Align items on the bottom */
-  margin-top: 100px; /* Push down by 100 pixels */
+  margin-top: 40px; /* Push down by 100 pixels */
 }
 
 #search-box #input {
@@ -69,7 +66,7 @@
   color: rgb(90, 42, 95);
   display: flex; /* Use flexbox layout */
   justify-content: center; /* Center horizontally */
-  margin-top: 40px; /* Push down by 100 pixels */
+  margin-top: 20px; /* Push down by 100 pixels */
   margin-bottom: 40px;
 }
 

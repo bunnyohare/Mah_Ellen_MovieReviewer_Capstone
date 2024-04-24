@@ -21,3 +21,7 @@
 .Footer {
  flex: 1; /* Footer gets 1/10 of the total flex */
 }
+
+body {
+  background-color: #d4ccfb;
+}

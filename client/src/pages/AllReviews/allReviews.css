@@ -1,6 +1,8 @@
 .reviews {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+  font-size: 20px;
+  font-weight: bold;
 }
 .reviews-grid {
   display: grid;
@@ -25,4 +27,7 @@
 }
 .review-body p {
   font-size: 0.8em;
+}
+h1{
+  text-align: center;
 }
