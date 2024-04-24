@@ -1,8 +1,8 @@
 # Client side of Mah_Ellen_MovieReviewer_Capstone
 
-## You must install the backend before you attempt to install the fronted of this application!
+## You must install the server before you attempt to install the client of this application!
 
-Vite React Javascript frontend for an application that allows users to post movie reviews. Supplies OMDB API info on movies to add visual interest and help identify what movie is being reviewed. This application also displays reviews and allows comments for published reviews.
+Vite React Javascript frontend for an application that allows a user to post movie reviews. Supplies OMDB API info on movies to add visual interest and help identify what movie is being reviewed. This application also displays reviews for published reviews.
 
 ## To run code from this Github:
 
@@ -19,33 +19,33 @@ Vite React Javascript frontend for an application that allows users to post movi
 
 1. Run `npm run dev`
 
-1. The user starts on the Landing Page. They directed to use the Log In button to access the application. Click the Log In button.
+1. The user starts on the Landing Page. User is directed to use the "Log In" button to access the application. Click the "Log In" button on the top left of the screen.
 
-1. The user the then taken to the LogIn page. Any UserId and Password combo will work as no real authentication is used in this demo app.
+1. The user is then taken to the LogIn page. Any "UserId" and "Password" combo will work as no real authentication is used in this demo app.
 
-1. Click on the Add Review item in the top navigation to be taken to the AddReview page where users can review a movie.
+1. Click on the "Add Review" item in the top navigation to be taken to the AddReview page where users can review a movie.
 
-1. Enter a title of a movie into the search box. 
+1. Enter a title of a movie into the search box. Note: Currently users must provide a valid word/string for the search.  It can be any word/string that has been in a movie title.
 
-1. Click on the Search button.
+1. Click on the "Search" button.
 
-1. An array of movies will be displayed that match your search string. 
+1. An array of 10 movies will be displayed that match your search string. 
 
-1. Select the movie you would like to review. 
+1. Click on the "Add a Review" button next to the movie you would like to review.
 
 1. Enter the Title and Body of the reveiw you are making into the form. 
 
-1. Click on Submit Review to save the review to the MongoDB. This new review is displayed to the user, and the option to edit the review is offered to the user.
+1. Click on "Submit Review" to save the review to the MongoDB. This new review is displayed to the user, and the option to edit the review is offered to the user.
 
-1. Click on Show Reviews in the top navigation to be taken to the AllReviews page to see all the reviews that have already been submitted.
+1. Click on "Show Reviews" in the top navigation to be taken to the AllReviews page to see all the reviews that have already been submitted.
 
-1. From the Show Reviews page a user can select Delete any review that has already been added.
+1. From the Show Reviews page a user can select "Delete" any review that has already been added.
 
-1. A user may also select to EDIT any review from the Show Reviews page. This will take the user to the EditReview Page.
+1. A user may also select to "Edit" any review from the Show Reviews page. This will take the user to the EditReview Page.
 
-1. Other pages for Privacy, Terms, and Contact info are available in the Footer.
+1. Other pages for "Privacy", "Terms", and "Contact" info are available in the Footer.
 
-1. A user my logout using the Log Out button in the top navigation.
+1. A user may logout using the "Log Out" button in the top navigation.
 
 <a href="https://mah-ellen-moviereviewer-capstone.onrender.com/">Live deploy available onrender.com</a> 
 
@@ -65,9 +65,6 @@ Vite React Javascript frontend for an application that allows users to post movi
 
 Source of movie data:
 OMDb API via  https://www.omdbapi.com/
-
-Background image based on "Milky way" By 24Novembers from Adobe Stock
-https://as1.ftcdn.net/v2/jpg/03/37/57/74/1000_F_337577487_VpfpvGTSY1rNGDWM7p4pKfMUxgIxqq3C.jpg
 
 Empty Movie Poster image based on "Empty cinema poster panel"
 By Who is Danny from Adobe Stock

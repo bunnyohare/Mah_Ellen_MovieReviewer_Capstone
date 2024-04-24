@@ -6,7 +6,7 @@ import "./singleReview.css";
 import { useNavigate } from "react-router-dom";
 
 //const MDB_SERVER = import.meta.env.MDB_SERVER;
-const MDB_SERVER = "http://localhost:5005/"
+const MDB_SERVER = import.meta.env.VITE_MDB_SERVER;
 
 function SingleReview() {
   const { id } = useParams();
